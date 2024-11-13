@@ -1,16 +1,4 @@
-import { useState, useEffect } from "react";
-
-const StarshipList = () => {
-  const [starships, setStarships] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await starshipServices.show();
-      setStarships(data);
-    };
-
-    fetchData();
-  }, []);
-
+const StarshipList = ({ starships }) => {
   return (
     <div>
       {starships.map((starship) => (
